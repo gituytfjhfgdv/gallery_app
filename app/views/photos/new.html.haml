@@ -1,0 +1,8 @@
+%h1 写真アップロード
+= form_with(model: @photo, local: true) do |f|
+  = f.label :title, 'タイトル'
+  = f.text_field :title
+
+  = f.label :image_file, '画像ファイル'
+  = f.file_field :image_file, accept: 'image/jpg,image/jpeg,image/png,image/gif'
+  = f.submit 'アップロードする', data: { disable_with: 'アップロード中です' }

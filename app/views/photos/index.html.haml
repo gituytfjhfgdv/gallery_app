@@ -1,4 +1,7 @@
 %h1 写真一覧
-- @photos&.each do |photo|
-  = photo.title
-  = photo.image_file if photo.image_file.attached?
+%ul.photos
+  - @photos&.each do |photo|
+    %li.center
+      %div
+        = photo.title
+      = image_tag photo.image_file, class: 'photo_image' if photo.image_file.attached?
