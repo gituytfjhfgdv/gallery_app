@@ -1,2 +1,15 @@
-%h1 Sessions#new
-%p Find me in app/views/sessions/new.html.erb
+%h1 ログイン
+- if @errors.any?
+  .alert
+    %ul
+      - @errors.each do |error|
+        %li.txt_red= error
+= form_for :session, url: login_path do |f|
+  %div
+    = f.label :email, 'ユーザID'
+    = f.text_field :email, value: @sign_in_params[:email].presence
+  %div
+    = f.label :password, 'パスワード'
+    = f.password_field :password, value: @sign_in_params[:password].presence
+
+  = f.submit 'ログインする'
