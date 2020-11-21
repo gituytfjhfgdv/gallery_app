@@ -1,0 +1,6 @@
+%div
+  - error_messages = errors.full_messages.presence || errors
+  %ul
+    - error_messages.each do |message|
+      %li
+        .txt_red= message
