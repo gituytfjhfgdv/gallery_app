@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def create
     login(@user)
-    redirect_to login_path, notice: '成功！'
+    redirect_to photos_path
   end
 
   private
