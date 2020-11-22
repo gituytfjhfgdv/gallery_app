@@ -1,5 +1,11 @@
 = link_to 'ログアウト', logout_path
 %h1 写真一覧
+- auth_app_url = "#{Rails.application.credentials.my_tweet_app[:host]}oauth/authorize?response_type=code&client_id=#{Rails.application.credentials.my_tweet_app[:client_id]}&redirect_uri=http://localhost:3000/oauth/callback&state=&scope="
+%div
+  - if authorized_with_oauth_app?
+    My TweetAppと連携中
+  - else
+    = link_to 'MyTweetAppと連携する', auth_app_url unless authorized_with_oauth_app?
 = link_to '写真を新しくアップロードする', new_photo_path
 %ul.photos
   - @photos&.each do |photo|
@@ -7,3 +13,5 @@
       %div
         = photo.title
       = image_tag photo.image_file, class: 'photo_image' if photo.image_file.attached?
+      - if authorized_with_oauth_app?
+        = button_to 'ツイートする', new_tweet_path(photo)
