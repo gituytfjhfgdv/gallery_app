@@ -1,5 +1,5 @@
 %div
-  - error_messages = errors.full_messages.presence || errors
+  - error_messages = errors.try(:full_messages).presence || errors
   %ul
     - error_messages.each do |message|
       %li
