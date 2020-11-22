@@ -1,5 +1,7 @@
 = link_to 'ログアウト', logout_path
 %h1 写真一覧
+- auth_app_url = "#{Rails.application.credentials.my_tweet_app[:host]}oauth/authorize?response_type=code&client_id=#{Rails.application.credentials.my_tweet_app[:client_id]}&redirect_uri=http://localhost:3000/oauth/callback&state=&scope="
+= link_to 'MyTweetAppと連携する', auth_app_url
 = link_to '写真を新しくアップロードする', new_photo_path
 %ul.photos
   - @photos&.each do |photo|
