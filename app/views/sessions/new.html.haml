@@ -1,11 +1,11 @@
 %h1 ログイン
 = render 'active_record_errors', errors: @errors if @errors.any?
 = form_for :session, url: login_path do |f|
-  %div
-    = f.label :email, 'ユーザID'
-    = f.text_field :email, value: @sign_in_params[:email].presence
-  %div
-    = f.label :password, 'パスワード'
-    = f.password_field :password, value: @sign_in_params[:password].presence
+  .form_row
+    = f.label :email, 'ユーザID', class: 'form_label'
+    = f.text_field :email, value: @sign_in_params[:email].presence, class: 'form_input'
+  .form_row
+    = f.label :password, 'パスワード', class: 'form_label'
+    = f.password_field :password, value: @sign_in_params[:password].presence, class: 'form_input'
 
-  = f.submit 'ログインする'
+  = f.submit 'ログインする', class: 'button'

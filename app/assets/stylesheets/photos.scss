@@ -5,10 +5,31 @@
   list-style: none;
   width: 80vw;
   display: flex;
-  justify-content: space-around;
+  padding: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 40px auto 0;
+}
+.photos li {
+  margin-bottom: 25px;
+}
+.photos::after {
+  display: block;
+  content:"";
+  width: 200px;
+}
+.photo_title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
+  margin-bottom: 10px;
 }
 .photo_image {
   width: 200px;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  margin-bottom:10px;
 }
