@@ -1,5 +1,7 @@
 %div
   - error_messages = errors.try(:full_messages).presence || errors
+  %p
+    以下のエラーを確認してください。
   %ul
     - error_messages.each do |message|
       %li
