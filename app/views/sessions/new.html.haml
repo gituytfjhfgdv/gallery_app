@@ -1,9 +1,5 @@
 %h1 ログイン
-- if @errors.any?
-  .alert
-    %ul
-      - @errors.each do |error|
-        %li.txt_red= error
+= render 'active_record_errors', errors: @errors if @errors.any?
 = form_for :session, url: login_path do |f|
   %div
     = f.label :email, 'ユーザID'

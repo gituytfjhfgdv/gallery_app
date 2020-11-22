@@ -5,4 +5,5 @@ class User < ApplicationRecord
                     format: /\A[-a-z0-9_+.]+@([-a-z0-9]+\.)+[a-z0-9]{2,}\z/i
   validates :email, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
+  has_many :photos
 end

@@ -1,0 +1,14 @@
+// Place all the styles related to the Photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.photos {
+  list-style: none;
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+}
+.photo_image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
