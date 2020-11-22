@@ -1,3 +1,4 @@
+= link_to 'ログアウト', logout_path
 %h1 写真アップロード
 = render 'active_record_errors', errors: @photo.errors if @photo.errors.any?
 = form_with(model: @photo, local: true) do |f|
@@ -9,3 +10,5 @@
     = f.label :image_file, '画像ファイル'
     = f.file_field :image_file, accept: 'image/jpg,image/jpeg,image/png,image/gif'
   = f.submit 'アップロードする', data: { disable_with: 'アップロード中です' }
+
+= link_to 'キャンセル', photos_path
