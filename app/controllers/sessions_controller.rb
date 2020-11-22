@@ -13,6 +13,10 @@ class SessionsController < ApplicationController
     redirect_to photos_path
   end
 
+  def destroy
+    logout
+  end
+
   private
 
   def sign_in_params
