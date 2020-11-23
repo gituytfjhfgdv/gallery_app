@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :photos, only: %i[index new create]
 
-  get '/oauth/callback', to: 'o_authes#create'
-  post 'tweet/:photo_id', to: 'o_authes#tweet', as: :new_tweet
+  get '/oauth/callback', to: 'o_auths#create'
+  post 'tweet/:photo_id', to: 'o_auths#tweet', as: :new_tweet
 end

@@ -1,7 +1,7 @@
 require 'net/https'
 require 'uri'
 
-class OAuthesController < ApplicationController
+class OAuthsController < ApplicationController
   before_action :permit_only_photo_owner, only: :tweet
 
   def create
