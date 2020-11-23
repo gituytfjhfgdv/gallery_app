@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     format: /\A[-a-z0-9_+.]+@([-a-z0-9]+\.)+[a-z0-9]{2,}\z/i
   validates :email, uniqueness: true
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true
   has_many :photos
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
