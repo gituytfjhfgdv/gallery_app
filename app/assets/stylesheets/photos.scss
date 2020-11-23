@@ -20,11 +20,13 @@
   width: 200px;
 }
 .photo_title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   width: 200px;
   margin-bottom: 10px;
+  height: calc( 1.2em * 2.5 );
+  line-height: 1.2;
+  text-align: left;
+  vertical-align: bottom;
+  font-size: 14px;
 }
 .photo_image {
   width: 200px;
