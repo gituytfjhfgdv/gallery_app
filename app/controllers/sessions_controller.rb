@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
   before_action :user, only: :create
   before_action :permit_only_valid_user, only: :create
 
