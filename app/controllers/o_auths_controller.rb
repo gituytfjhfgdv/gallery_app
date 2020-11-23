@@ -4,7 +4,7 @@ require 'uri'
 class OAuthsController < ApplicationController
   before_action :permit_only_photo_owner, only: :tweet
 
-  def create
+  def connect
     code = params[:code]
 
     uri = URI.parse("#{Rails.application.credentials.my_tweet_app[:host]}oauth/token")
