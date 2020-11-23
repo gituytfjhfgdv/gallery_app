@@ -2,7 +2,11 @@ ja:
   activerecord:
     models:
       photo: 写真
+      user: ユーザ
     attributes:
       photo:
         title: タイトル
         image_file: 画像ファイル
+      user:
+        password: パスワード
+        email: ユーザID

@@ -4,11 +4,11 @@
 = render 'active_record_errors', errors: @photo.errors if @photo.errors.any?
 = form_with(model: @photo, local: true) do |f|
   %div.form_row
-    = f.label :title, 'タイトル', class: 'form_label'
+    = f.label :title, t("activerecord.attributes.photo.title"), class: 'form_label'
     = f.text_field :title, class: 'form_input'
 
   %div.form_row
-    = f.label :image_file, '画像ファイル', class: 'form_label'
+    = f.label :image_file, t("activerecord.attributes.photo.image_file"), class: 'form_label'
     = f.file_field :image_file, accept: 'image/jpg,image/jpeg,image/png,image/gif', class: 'form_input'
   = f.submit 'アップロードする', data: { disable_with: 'アップロード中です' }, class: 'button'
 
